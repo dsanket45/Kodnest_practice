@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .out{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            margin-top: 200px; 
+        }
+        
+        .btn{
+            border: 0px  ;
+            background-color: rgba(182, 189, 189, 0.709);
+            border-radius: 20px;
+            padding: 10px;
+            color: rgb(39, 1, 1);
+            font-size: large;
+        }
+        button:hover{
+            background-color: rgb(25, 142, 62);
+        }
+        #output{
+            color: rgb(255, 0, 0);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="out">
+        <input type="number" class="btn" id="ageinput" placeholder="Enter age to validate voting">
+        <h3 id="output">. . . </h3>
+        <button class="btn" id="checker" >check age</button>
+    </div>
+    <script>
+        
+    const ageinput = document.getElementById("ageinput");
+    const output = document.getElementById("output");
+    const checker = document.getElementById("checker"); 
+        
+    checker.addEventListener('click',()=>{
+        const age = parseInt(ageinput.value)
+        if(isNaN(age)){
+            output.innerText = "Enter age"
+        }
+        else if(age<18 ||  age >100){
+            output.innerText = "Not eligible"
+        }
+        else {
+            output.innerText = "Eligible"
+
+        }
+    })
+
+    </script>
+</body>
+</html>
